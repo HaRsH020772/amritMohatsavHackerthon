@@ -1,0 +1,55 @@
+Writer Registration Fields :
+
+// Personal details
+name:string
+age:string || number
+phone:string
+gender:string
+email:string
+profile:[{id:string, secure_url:string}]
+certificate:[{id:string, secure_url:string}]
+education:[more than one fields]
+
+// Location oriented details
+city:string
+state:string
+pincode:string || number
+address:string
+
+// Purpose oriented
+preferredLanguages: Array
+role: "writer" -- fixed
+writerPermission: true -- bydefault
+acceptedExams: []
+
+
+Blind Registration Fields :
+
+// Personal Details
+name: string
+age: string
+city: string
+state: string
+gender:string
+address: string
+pincode: string || number
+phone: string
+proof: image of certificate which ensures the disabalities
+education:[more than one fields]
+
+// Exam Details
+centerCity: string
+centerState: string
+centerAddress: string
+centerInstitute: string
+examSubject: string
+examDate: date
+examDuration: number [hrs] {no of minutes or a particular time measurement variable is required}
+examTiming: string
+examLanguage: string // deal with specific code
+postStatus: boolean -- default true
+
+//Purpose Oriented
+role: "needy" -- fixed
+needyPermission: true -- default true
+postedExams: [] {List of posted Exams id}
