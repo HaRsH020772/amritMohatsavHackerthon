@@ -31,8 +31,6 @@ exports.needyRegistration = async (req, res) => {
                 secure_url: result.secure_url
             });
         }
-        else
-            res.status(400).json({ status: false });
 
         req.body.proof = certificateList.length > 0 ? certificateList : null;
         req.body.role = "needy";
@@ -43,7 +41,7 @@ exports.needyRegistration = async (req, res) => {
         let user = await collection.insertOne(req.body);
 
         if (!user)
-            res.status(400).json({ status: false });
+            return res.status(400).json({ status: false });
 
         res.status(200).send(user);
     }
