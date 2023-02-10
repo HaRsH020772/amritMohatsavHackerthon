@@ -170,7 +170,7 @@ exports.acceptTheNeedyRequest = async (req, res) => {
                         console.log("Email sent: " + info.response);
                 });
 
-                if(await sendOtp(needyInfo.phone))
+                if(await sendOtp(needyInfo.phone, false))
                     return res.status(200).json({status: true, message: "You have successfully accepted the exam post!!"});
             }
         }
@@ -183,7 +183,5 @@ exports.acceptTheNeedyRequest = async (req, res) => {
         console.log(err);
         return res.status(500).json({status: false, msg: "Internal server error!!"});
     }
-
-
 
 }

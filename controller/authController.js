@@ -5,7 +5,7 @@ exports.userOtpSend = async (req, res) => {
     {
         const {phone} = req.body;
 
-        (await sendOtp(phone)) ? res.status(200).json({status: true , message : "otp send success!!"}) : res.status(400).json({status: false ,  message : "Issues while sending the otp!!"});   
+        (await sendOtp(phone,true)) ? res.status(200).json({status: true , message : "otp send success!!"}) : res.status(400).json({status: false ,  message : "Issues while sending the otp!!"});   
     }
     catch (error) 
     {

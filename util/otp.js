@@ -1,12 +1,12 @@
 const Client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-const sendOtp = async (number) => {
+const sendOtp = async (number, callOrMsg) => {
 
     try 
     {
         const message = await Client.verify.services(process.env.MESSAGE_SERVICE_SID).verifications.create({
             to: number,
-            channel: "sms"
+            channel: callOrMsg ? "sms" : "call"
         });
         return true;
     }
