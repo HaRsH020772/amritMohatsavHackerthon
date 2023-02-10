@@ -4,12 +4,8 @@ exports.userOtpSend = async (req, res) => {
     try 
     {
         const {phone} = req.body;
-        // mongoClient = await connectWithDb();
-        const db = global.db.db('spotgrage');
-        const collection = db.collection('users');
-        // let user = await collection.findOne({phone});
 
-        (await sendOtp(phone)) ? res.status(200).json({status: true , message : "User already exist!!"}) : res.status(400).json({status: false ,  message : "User does not exist!!"});   
+        (await sendOtp(phone)) ? res.status(200).json({status: true , message : "otp send success!!"}) : res.status(400).json({status: false ,  message : "Issues while sending the otp!!"});   
     }
     catch (error) 
     {
