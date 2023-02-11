@@ -66,7 +66,6 @@ exports.writerRegistration = async (req, res) => {
         console.log(error);
         res.status(500).json({ message: "Internal Server Error" });
     }
-
 }
 
 exports.writerLogin = async (req, res) => {
