@@ -53,8 +53,6 @@ exports.writerRegistration = async (req, res) => {
         req.body.profile = profileList;
         req.body.role = "writer";
         req.body.writerPermission = true;
-        req.body.preferredLanguages = JSON.parse(req.body.preferredLanguages);
-        req.body.education = JSON.parse(req.body.education);
         req.body.age = parseInt(req.body.age);
         req.body.pincode = parseInt(req.body.pincode);
         req.body.acceptedExams = [];

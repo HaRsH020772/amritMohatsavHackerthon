@@ -7,6 +7,7 @@ exports.needyRegistration = async (req, res) => {
     
     try
     {
+        console.log(req.body);
         let certificateList = [];
         const db = global.db.db('amhackerthon');
         const collection = db.collection('blind');
@@ -34,7 +35,6 @@ exports.needyRegistration = async (req, res) => {
 
         req.body.proof = certificateList.length > 0 ? certificateList : null;
         req.body.role = "needy";
-        req.body.education = JSON.parse(req.body.education);
         req.body.needyPermission = true;
         req.body.postedExams = [];
 
