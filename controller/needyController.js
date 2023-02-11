@@ -35,6 +35,8 @@ exports.needyRegistration = async (req, res) => {
 
         req.body.proof = certificateList.length > 0 ? certificateList : null;
         req.body.role = "needy";
+        req.body.age = parseInt(req.body.age);
+        req.body.pincode = parseInt(req.body.pincode);
         req.body.needyPermission = true;
         req.body.postedExams = [];
 

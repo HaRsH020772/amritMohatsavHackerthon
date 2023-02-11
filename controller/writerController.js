@@ -46,11 +46,9 @@ exports.writerRegistration = async (req, res) => {
                 secure_url: result2.secure_url
             });
         }
-        else
-            return res.status(400).json({ status: false });
 
-        req.body.certificate = certificateList;
-        req.body.profile = profileList;
+        req.body.certificate = certificateList.length > 0 ? certificateList : null;
+        req.body.profile = profileList.length > 0 ? profileList : null;
         req.body.role = "writer";
         req.body.writerPermission = true;
         req.body.age = parseInt(req.body.age);
